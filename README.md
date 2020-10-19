@@ -37,17 +37,17 @@ The ribbon cable has **15 pins**. The biggest lane you can see on the photo is t
   - `P` Power button
   - `I` Input
   - `E` Exit
-  - `⬅️` Left button
-  - `➡️` Right button
-  - `⬆️` Up button
-  - `⬇️` Down button
+  - `←` Left button
+  - `→` Right button
+  - `↑` Up button
+  - `↓` Down button
   - `R` Reset/Rotate
 
 ![Scotch bad design](./pictures/2_ribbon_torn.jpg)
 
 ```python  
-|| .a. || .b. || .c. || ⬇️ | ➡️ || ⬅️ | E | ⬆️ | I | R || .... || P | . ||| VVVVVVVV ||
-   _⬆️______⬆️_____⬆️_                                    _⬆️_________⬆️_
+|| .a. || .b. || .c. || ↓ | → || ← | E | ↑ | I | R || .... || P | . ||| VVVVVVVV ||
+   _↑______↑_____↑_                                    _↑_________↑_
   |poss. light sens|                                  | poss. LED   |
   |on 3 bits       |                                  | + blue/green|
 ```
@@ -57,7 +57,7 @@ There are still 5 unknown lanes, more likely 3 bits encoding light level (8 leve
 ### Mapping of the ribbon connector
 15 pins view from front:
 ```perl
-    V-V . P . R I ⬆️ E ⬅️ ➡️ ⬇️ . . .
+    V-V . P . R I ↑ E ← → ↓ . . .
     | | | | | | | | | | | | | | |
  ___                              ___
 |     connector shown from front     |
@@ -69,9 +69,9 @@ That's why the connector is distributed left/right like this.
 ```python
       .a. -
       .c. -  - .b.
-3       ➡️ -  - ⬇️
-0       E -  - ⬅️
-1       I -  - ⬆️
+3       → -  - ↓
+0       E -  - ←
+1       I -  - ↑
 S     ... -  - R
         . -  - P     <-- For instance if short those lanes
         V ---- V     <-|   you will power-up/down your monitor
